@@ -8,7 +8,23 @@
 </head>
 <body>
 
-    <h3>Hola desde mi primer Template!</h3>
+    <h3>Hola {{name}} desde mi primer Template!</h3>
+
+    <p>Momento actual: {{ahora}}</p>
+
+    <p>Mis notas son: {{notas}}</p>
+
+    <ul>
+        {% for nota in notas %}
+            <li>
+                {% if nota < 4 %}
+                <p style="color: red;"> Nota mala: {{nota}} </p>
+                {% else %}
+                <p style="color: blue;"> Nota buena: {{nota}} </p>
+                {% endif %}
+            </li>
+        {% endfor %}  
+    </ul>
     
 </body>
 </html>

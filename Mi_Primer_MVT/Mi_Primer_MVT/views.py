@@ -1,6 +1,7 @@
-from tempfile import template
+from datetime import datetime
 from django.http import HttpResponse
 from django.template import Context, Template
+from django.template import loader
 
 def saluda(request):
 
@@ -24,18 +25,30 @@ def calcular_fecha(request, nombre, edad):
     return HttpResponse(f'Hola {nombre} naciste en {año_nacimiento}!')
 
 
-def probandoTemplate(request):
+def probandoTemplate(request, nombre):
 
-    miHtml = open('C:/Users/ezequ/Desktop/Natu/1. Programación/1. Curso CoderHouse/mi_primer_mvt/Mi_Primer_MVT/Mi_Primer_MVT/templates/template1.html')
+    listaNotas = [2, 3, 4, 8, 10]
 
-    plantilla = Template(miHtml.read())
+#    miHtml = open('C:/Users/ezequ/Desktop/Natu/1. Programación/1. Curso CoderHouse/mi_primer_mvt/Mi_Primer_MVT/Mi_Primer_MVT/templates/template1.html')
 
-    miHtml.close()
+#    plantilla = Template(miHtml.read())
 
-    miContexto = Context()
+#    miHtml.close()
 
-    return HttpResponse(plantilla.render(miContexto))
+#    miContexto = Context({"name": nombre, "ahora": datetime.now(), "notas": listaNotas})
 
+#    return HttpResponse(plantilla.render(miContexto))
+
+    plantilla = loader.get_template('template1.html')
+
+    return HttpResponse(plantilla.render({"name": nombre, "ahora": datetime.now(), "notas": listaNotas}))
+
+
+def segundoTemplate(request, nombre):
+
+    plantilla = loader.get_template('template2.html')
+
+    return HttpResponse(plantilla.render({"name": nombre}))
 
 
 

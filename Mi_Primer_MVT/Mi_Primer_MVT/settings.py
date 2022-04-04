@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Mi_Primer_MVT.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/ezequ/Desktop/Natu/1. Programación/1. Curso CoderHouse/mi_primer_mvt/Mi_Primer_MVT/Mi_Primer_MVT/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
