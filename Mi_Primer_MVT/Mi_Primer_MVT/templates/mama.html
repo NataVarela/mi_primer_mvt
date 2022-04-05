@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mama </title>
+</head>
+<body>
+
+    <p>
+    {% if language == "ingles" %}
+        <p style="color:red"> Hello, my name is {{name}} i'm {{age}} years old, and i was born in {{date}}. </p>
+    {% endif %}
+        </p>
+    <p>
+    {% if language == "español" %}
+        <p style="color: green"> Hola, mi nombre {{name}} tengo {{age}} años, y naci el {{date}}. </p>
+    {% endif %}
+        </p>
+    
+</body>
+</html>
